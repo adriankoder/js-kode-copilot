@@ -1,0 +1,64 @@
+<!-- FILBANE: /Users/adrianhindenes/Jottacloud/Adrian/gløde programering/kode/js kode/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="kalkulator">
+        <!-- Inputfelt for å vise resultatet -->
+        <input type="text" id="resultat" readonly>
+        <!-- Knapp for å tømme resultatet -->
+        <button onclick="tømResultat()">C</button>
+        <!-- Knapper for å legge til tall i resultatet -->
+        <button onclick="leggTilTall(7)">7</button>
+        <button onclick="leggTilTall(8)">8</button>
+        <button onclick="leggTilTall(9)">9</button>
+        <!-- Knapper for å legge til operatører i resultatet -->
+        <button onclick="leggTilOperatør('+')">+</button>
+        <button onclick="leggTilTall(4)">4</button>
+        <button onclick="leggTilTall(5)">5</button>
+        <button onclick="leggTilTall(6)">6</button>
+        <button onclick="leggTilOperatør('-')">-</button>
+        <button onclick="leggTilTall(1)">1</button>
+        <button onclick="leggTilTall(2)">2</button>
+        <button onclick="leggTilTall(3)">3</button>
+        <button onclick="leggTilOperatør('*')">*</button>
+        <button onclick="leggTilTall(0)">0</button>
+        <!-- Knapp for å beregne resultatet -->
+        <button onclick="beregne()">=</button>
+        <!-- Knapp for å legge til divisjonsoperatøren i resultatet -->
+        <button onclick="leggTilOperatør('/')">/</button>
+    </div>
+
+    <script>
+        // Hent resultat-inputelementet
+        let resultat = document.getElementById('resultat');
+
+        // Funksjon for å legge til et tall i resultatet
+        function leggTilTall(tall) {
+            resultat.value += tall;
+        }
+
+        // Funksjon for å legge til en operatør i resultatet
+        function leggTilOperatør(operatør) {
+            resultat.value += operatør;
+        }
+
+        // Funksjon for å beregne resultatet
+        function beregne() {
+            try {
+                resultat.value = eval(resultat.value);
+            } catch (error) {
+                resultat.value = 'Feil';
+            }
+        }
+
+        // Funksjon for å tømme resultatet
+        function tømResultat() {
+            resultat.value = '';
+        }
+    </script>
+</body>
+</html>

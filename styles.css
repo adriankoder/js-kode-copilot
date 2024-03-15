@@ -1,0 +1,21 @@
+body {
+    background-color: black; /* Setter bakgrunnsfargen til svart */
+}
+
+.kalkulator {
+    display: grid; /* Bruker CSS Grid for layout */
+    grid-template-columns: repeat(4, 1fr); /* Definerer 4 like store kolonner */
+    gap: 10px; /* Setter avstand mellom elementene */
+    padding: 10px; /* Legger til padding rundt kalkulatoren */
+    border: 1px solid #ccc; /* Setter en 1px solid kantlinje med farge #ccc */
+    max-width: 100%; /* Setter maks bredde til 100% */
+    height: 100%; /* Setter høyde til 100% */
+    margin: 0 auto; /* Sentrerer kalkulatoren horisontalt */
+}
+
+/* Stil for inputfeltet */
+.kalkulator input {
+    grid-column: span 4; /* Bruker 4 kolonner for inputfeltet */
+    padding: 10px; /* Legger til padding rundt inputfeltet */
+    font-size: 108px; /* Setter skriftstørrelsen til 108px */
+}
